@@ -1,0 +1,2660 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kartenheten-mk.github.io/dashify-documentation/widgets/clustering/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../datasources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Clustering - Dashify Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map-clustering-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dashify Documentation" class="md-header__button md-logo" aria-label="Dashify Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dashify Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Clustering
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="green" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kartenheten-mk/dashify-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../configuration/" class="md-tabs__link">
+          
+  
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dashboards/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dashboards
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Widgets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../datasources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Data Sources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../filters/" class="md-tabs__link">
+          
+  
+  
+  Filters &amp; Functions
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dashify Documentation" class="md-nav__button md-logo" aria-label="Dashify Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Dashify Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kartenheten-mk/dashify-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/app_customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Widgets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Widgets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clustering
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clustering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Clustering?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-clustering-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Clustering Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point-geometries-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Geometries (Default Behavior)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-point-geometries-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Point Geometries (Default Behavior)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-all-geometry-types-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering All Geometry Types (New!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-appearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Appearance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-point-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Point Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-geometry-types-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed Geometry Types (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-all-geometries-polygons-lines-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster All Geometries (Polygons, Lines, etc.)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-clustering-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Without Clustering (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-all-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering All Geometry Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering All Geometry Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendering Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-large-building-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Large Building Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centroid-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centroid Computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-privacy-protected-parcels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Example: Privacy-Protected Parcels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-individual-features-show-only-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Individual Features (Show Only Clusters)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hiding Individual Features (Show Only Clusters)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-vs-without-single-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: With vs Without Single Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-privacy-focused-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Example: Privacy-Focused Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-features-at-high-zoom-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Features at High Zoom Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hiding Features at High Zoom Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-with-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map-feels-slow-with-many-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map feels slow with many features?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters-not-appearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clusters not appearing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-selection-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature selection not working?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Enhancements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters &amp; Functions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Filters &amp; Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/spatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spatial Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Clustering?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enabling Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-clustering-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Clustering Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#full-configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point-geometries-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point Geometries (Default Behavior)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-point-geometries-default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Point Geometries (Default Behavior)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clustering-all-geometry-types-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering All Geometry Types (New!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-appearance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Appearance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Use Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-point-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Point Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-geometry-types-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed Geometry Types (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-all-geometries-polygons-lines-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster All Geometries (Polygons, Lines, etc.)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without-clustering-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Without Clustering (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-all-geometry-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clustering All Geometry Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clustering All Geometry Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendering-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendering Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-large-building-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Large Building Dataset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centroid-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centroid Computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-privacy-protected-parcels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Example: Privacy-Protected Parcels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Details
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-individual-features-show-only-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Individual Features (Show Only Clusters)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hiding Individual Features (Show Only Clusters)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-vs-without-single-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: With vs Without Single Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-example-privacy-focused-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Example: Privacy-Focused Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-features-at-high-zoom-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Features at High Zoom Levels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hiding Features at High Zoom Levels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-with-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining with Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#map-feels-slow-with-many-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map feels slow with many features?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters-not-appearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clusters not appearing?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-selection-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature selection not working?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Enhancements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="map-clustering-guide">Map Clustering Guide</h1>
+<p>This guide explains how to use the marker clustering feature to improve map performance when displaying large numbers of point features.</p>
+<h2 id="what-is-clustering">What is Clustering?</h2>
+<p>Clustering automatically groups nearby point markers together at lower zoom levels, displaying a cluster icon with a count. As you zoom in, clusters expand to show individual markers. This significantly improves performance when rendering 1000+ point features.</p>
+<h2 id="enabling-clustering">Enabling Clustering</h2>
+<p>To enable clustering on a map widget, add the <code>enableClustering</code> option to your map widget configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">62.5</span><span class="p">,</span><span class="w"> </span><span class="mf">14.5</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="configuration-options">Configuration Options</h2>
+<h3 id="basic-configuration">Basic Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Map with Clustering"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="advanced-clustering-options">Advanced Clustering Options</h3>
+<p>All clustering options are optional. When not specified, optimized defaults are used.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enableClustering</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Enable/disable clustering (must be <code>true</code> to activate)</td>
+</tr>
+<tr>
+<td><code>clusterAllGeometries</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Cluster all geometry types using centroids (not just points)</td>
+</tr>
+<tr>
+<td><code>clusterRadius</code></td>
+<td>number</td>
+<td><code>50</code></td>
+<td>Maximum radius (px) a cluster covers. Smaller = earlier un-clustering</td>
+</tr>
+<tr>
+<td><code>disableClusteringAtZoom</code></td>
+<td>number</td>
+<td><code>undefined</code></td>
+<td>Zoom level at which clustering is disabled (shows all markers)</td>
+</tr>
+<tr>
+<td><code>spiderfyOnMaxZoom</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Spiderfy (spread out) markers when clicking cluster at max zoom</td>
+</tr>
+<tr>
+<td><code>showCoverageOnHover</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Show cluster bounds polygon on hover</td>
+</tr>
+<tr>
+<td><code>zoomToBoundsOnClick</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Zoom to fit cluster bounds when clicked</td>
+</tr>
+<tr>
+<td><code>animate</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Enable/disable cluster animations</td>
+</tr>
+<tr>
+<td><code>chunkedLoading</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Load markers in chunks for better performance</td>
+</tr>
+<tr>
+<td><code>removeOutsideVisibleBounds</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Remove markers outside viewport for performance</td>
+</tr>
+<tr>
+<td><code>showSingleFeatures</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Show individual (unclustered) markers. When <code>false</code>, only cluster icons are visible</td>
+</tr>
+<tr>
+<td><code>hideAtZoom</code></td>
+<td>number</td>
+<td><code>undefined</code></td>
+<td>Hide all features when zoom level is &gt;= this value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="full-configuration-example">Full Configuration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced Map with Clustering"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"spiderfyOnMaxZoom"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showCoverageOnHover"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoomToBoundsOnClick"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"animate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"chunkedLoading"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"removeOutsideVisibleBounds"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">59.3293</span><span class="p">,</span><span class="w"> </span><span class="mf">18.0686</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"markerColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#e74c3c"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showColorPicker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"mapSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myCustomMap"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="how-it-works">How It Works</h2>
+<h3 id="point-geometries-default-behavior">Point Geometries (Default Behavior)</h3>
+<ul>
+<li><strong>Point</strong> and <strong>MultiPoint</strong> features are clustered when <code>enableClustering: true</code></li>
+<li>Clusters show the count of features they contain</li>
+<li>Click a cluster to zoom in and expand it</li>
+<li>Popups and feature selection work normally on individual markers</li>
+</ul>
+<h3 id="non-point-geometries-default-behavior">Non-Point Geometries (Default Behavior)</h3>
+<ul>
+<li><strong>Polygon</strong>, <strong>LineString</strong>, and <strong>MultiPolygon</strong> features are rendered normally</li>
+<li>These geometry types are never clustered by default</li>
+<li>All features can be displayed together on the same map</li>
+</ul>
+<h3 id="clustering-all-geometry-types-new">Clustering All Geometry Types (New!)</h3>
+<p>With <code>clusterAllGeometries: true</code>, you can cluster <strong>any geometry type</strong> including polygons, lines, and other shapes:</p>
+<ul>
+<li><strong>How it works</strong>: The system computes the centroid (center point) of each geometry</li>
+<li><strong>What you see</strong>: At low zoom levels, all features appear as clustered circle markers at their centroid locations</li>
+<li><strong>Zoom in</strong>: When you reach the <code>disableClusteringAtZoom</code> level, actual polygon/line shapes appear</li>
+<li><strong>Use cases</strong>: Large datasets with mixed geometry types, density visualization, performance optimization</li>
+</ul>
+<p><strong>Important</strong>: <code>clusterAllGeometries</code> requires <code>enableClustering: true</code> to work.</p>
+<h3 id="performance-benefits">Performance Benefits</h3>
+<ul>
+<li><strong>Without clustering</strong>: Rendering 1000+ points can cause lag and slow map interactions</li>
+<li><strong>With clustering</strong>: Dramatically improves performance by reducing visible markers</li>
+<li>Optimal for datasets with thousands of point features</li>
+</ul>
+<h2 id="visual-appearance">Visual Appearance</h2>
+<ul>
+<li><strong>Cluster markers</strong>: Display a count badge with the number of features</li>
+<li><strong>Individual markers</strong>: Rendered as circle markers with your chosen color</li>
+<li><strong>Selected features</strong>: Highlighted in red, rendered on top of clusters</li>
+<li><strong>Smooth animations</strong>: Clusters expand/collapse smoothly when zooming</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Enable for large datasets</strong>: Use clustering when displaying 100+ point features</li>
+<li><strong>Disable for small datasets</strong>: Not necessary for fewer than 50 points</li>
+<li><strong>Combine with time filters</strong>: Use time filter sliders to reduce data before rendering</li>
+<li><strong>Use with spatial filters</strong>: Drawing tools work normally with clustered maps</li>
+</ol>
+<h2 id="example-use-cases">Example Use Cases</h2>
+<h3 id="large-point-dataset">Large Point Dataset</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Building Locations"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buildings"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="mixed-geometry-types-default">Mixed Geometry Types (Default)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mixed Features"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mixedData"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Points will be clustered; polygons and lines will render normally.</p>
+</blockquote>
+<h3 id="cluster-all-geometries-polygons-lines-etc">Cluster All Geometries (Polygons, Lines, etc.)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cluster Everything"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allGeometries"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterAllGeometries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>All geometry types</strong> (points, polygons, lines) are clustered using their centroids. At zoom 14+, actual shapes appear.</p>
+</blockquote>
+<h3 id="without-clustering-default">Without Clustering (Default)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Simple Map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myData"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Clustering is opt-in and disabled by default.</p>
+</blockquote>
+<h2 id="clustering-all-geometry-types">Clustering All Geometry Types</h2>
+<h3 id="overview">Overview</h3>
+<p>By default, only <strong>Point</strong> and <strong>MultiPoint</strong> geometries are clustered. However, with <code>clusterAllGeometries: true</code>, you can cluster <strong>any geometry type</strong> including polygons, lines, and complex shapes.</p>
+<h3 id="how-it-works_1">How It Works</h3>
+<p>When <code>clusterAllGeometries</code> is enabled:</p>
+<ol>
+<li><strong>Centroid Calculation</strong>: The system computes the bounding box center (centroid) for each feature</li>
+<li><strong>Low Zoom (Clustered)</strong>: All features appear as circle markers at their centroid locations</li>
+<li><strong>High Zoom (Unclustered)</strong>: When you reach <code>disableClusteringAtZoom</code>, actual geometry shapes appear</li>
+</ol>
+<h3 id="configuration">Configuration</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cluster All Geometries"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterAllGeometries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Key Points:</strong>
+- Requires <code>enableClustering: true</code>
+- Works best with <code>disableClusteringAtZoom</code> set (otherwise shapes never appear)
+- Centroids are computed from bounding box centers (fast and predictable)</p>
+<h3 id="rendering-behavior">Rendering Behavior</h3>
+<p><strong>When clustered (zoom &lt; disableClusteringAtZoom):</strong>
+- All features shown as circle markers at centroids
+- Polygons/lines NOT rendered as shapes
+- Clusters show accurate total counts
+- Clicking a cluster zooms in</p>
+<p><strong>When unclustered (zoom &gt;= disableClusteringAtZoom):</strong>
+- Point features: remain as circle markers
+- Polygon/line features: rendered as actual shapes
+- All features fully interactive</p>
+<h3 id="use-cases">Use Cases</h3>
+<ol>
+<li><strong>Large Polygon Datasets</strong>: Cluster thousands of building footprints or parcels</li>
+<li><strong>Mixed Data</strong>: Combine points, lines, and polygons in one clustered view</li>
+<li><strong>Performance</strong>: Dramatically reduce rendering load for complex geometries</li>
+<li><strong>Density Visualization</strong>: Show feature distribution without visual clutter</li>
+<li><strong>Progressive Detail</strong>: Show overview first, then reveal details on zoom</li>
+</ol>
+<h3 id="example-large-building-dataset">Example: Large Building Dataset</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Building Clusters"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buildings"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterAllGeometries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showSingleFeatures"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"markerColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#f59e0b"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Behavior:</strong>
+- Zoom 0-14: Buildings shown as clustered dots at their centers
+- Zoom 15+: Actual building polygons appear
+- Smooth transition between views</p>
+<h3 id="centroid-computation">Centroid Computation</h3>
+<p>The centroid algorithm:
+- <strong>Simple &amp; Fast</strong>: Uses bounding box center, not true geometric centroid
+- <strong>Predictable</strong>: Centroid is always within bounding box (though may be outside concave polygons)
+- <strong>All Types Supported</strong>: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, GeometryCollection</p>
+<h3 id="best-practices_1">Best Practices</h3>
+<ol>
+<li><strong>Always set <code>disableClusteringAtZoom</code></strong>: Without it, shapes never appear</li>
+<li><strong>Choose appropriate zoom level</strong>: Balance between performance and detail</li>
+<li><strong>Consider data density</strong>: Use for 100+ features, not small datasets</li>
+<li><strong>Test zoom transitions</strong>: Ensure smooth experience when shapes appear</li>
+<li><strong>Combine with <code>showSingleFeatures: false</code></strong>: For pure density visualization</li>
+</ol>
+<h3 id="advanced-example-privacy-protected-parcels">Advanced Example: Privacy-Protected Parcels</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Land Parcels (Privacy Protected)"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"parcels"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterAllGeometries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showSingleFeatures"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hideAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"queryable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Result:</strong>
+- Shows only cluster icons (never individual shapes)
+- Actual parcels appear at zoom 16-17
+- All features hidden at zoom 18+
+- No click interactions</p>
+<h2 id="technical-details">Technical Details</h2>
+<ul>
+<li><strong>Library</strong>: Uses <code>react-leaflet-cluster</code> with <code>leaflet.markercluster</code></li>
+<li><strong>Default cluster radius</strong>: 50 pixels (optimized for earlier un-clustering, library default is 80)</li>
+<li><strong>Chunked loading</strong>: Enabled by default for better performance with large datasets</li>
+<li><strong>Performance optimizations</strong>: Automatic removal of markers outside viewport</li>
+<li><strong>Centroid algorithm</strong>: Bounding box center (fast, suitable for all geometry types)</li>
+<li><strong>Compatible with</strong>: All existing map features (popups, selection, filters, etc.)</li>
+</ul>
+<h2 id="hiding-individual-features-show-only-clusters">Hiding Individual Features (Show Only Clusters)</h2>
+<p>The <code>showSingleFeatures</code> option allows you to hide individual (unclustered) markers while keeping cluster icons visible. This is useful when you want to display density/distribution information without showing exact point locations.</p>
+<h3 id="how-it-works_2">How It Works</h3>
+<p>When <code>showSingleFeatures</code> is set to <code>false</code>:
+- Individual point markers become invisible (opacity set to 0)
+- Cluster icons remain fully visible and show accurate counts
+- The markers still participate in clustering calculations
+- Feature count at the bottom remains accurate
+- Popups and interactions are disabled on invisible markers</p>
+<p><strong>Important:</strong> This option only affects point features when clustering is enabled. Non-point geometries (polygons, lines) are always visible.</p>
+<h3 id="configuration-example">Configuration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Density View (Clusters Only)"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showSingleFeatures"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">61.0</span><span class="p">,</span><span class="w"> </span><span class="mf">14.5</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"markerColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#8b5cf6"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In this example:
+- Clusters show the count of features they contain
+- Individual markers are invisible at all zoom levels
+- When clustering is disabled at zoom 14, all markers become invisible
+- Cluster counts remain accurate regardless of visibility</p>
+<h3 id="use-cases_1">Use Cases</h3>
+<ol>
+<li><strong>Privacy Protection</strong>: Show general distribution without revealing exact locations</li>
+<li><strong>Density Visualization</strong>: Display data concentration without individual points</li>
+<li><strong>Overview Maps</strong>: Focus on patterns and trends rather than specific features</li>
+<li><strong>Performance</strong>: Reduce visual clutter when exact locations aren't needed</li>
+<li><strong>Heat Map Alternative</strong>: Use cluster counts to show density</li>
+</ol>
+<h3 id="comparison-with-vs-without-single-features">Comparison: With vs Without Single Features</h3>
+<p><strong>Default (<code>showSingleFeatures: true</code>)</strong>:
+- Zoom 0-13: Clusters visible with aggregated counts
+- Zoom 14+: Individual markers visible (clustering disabled)
+- Full interactivity at all zoom levels</p>
+<p><strong>Hide Single Features (<code>showSingleFeatures: false</code>)</strong>:
+- Zoom 0-13: Only clusters visible
+- Zoom 14+: No markers visible (but count remains accurate)
+- Interactivity limited to cluster clicks</p>
+<h3 id="best-practices_2">Best Practices</h3>
+<ol>
+<li><strong>Always enable clustering</strong>: <code>showSingleFeatures: false</code> only makes sense with clustering enabled</li>
+<li><strong>Set appropriate <code>disableClusteringAtZoom</code></strong>: Consider if you want features to disappear at higher zoom levels</li>
+<li><strong>Combine with <code>hideAtZoom</code></strong>: For additional privacy/control at extreme zoom levels</li>
+<li><strong>Inform users</strong>: Consider adding a note that individual features are hidden for privacy/clarity</li>
+</ol>
+<h3 id="advanced-example-privacy-focused-map">Advanced Example: Privacy-Focused Map</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Population Distribution (Privacy Protected)"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"population-data"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showSingleFeatures"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hideAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"queryable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">59.3293</span><span class="p">,</span><span class="w"> </span><span class="mf">18.0686</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This configuration:
+- Shows only cluster icons (never individual points)
+- Maintains clustering until zoom level 16
+- Hides all features at zoom level 18
+- Disables click interactions (<code>queryable: false</code>)</p>
+<h2 id="hiding-features-at-high-zoom-levels">Hiding Features at High Zoom Levels</h2>
+<p>The <code>hideAtZoom</code> option allows you to hide all map features when users zoom in too close. This is useful for privacy concerns, data sensitivity, or when features become irrelevant at very close zoom levels.</p>
+<h3 id="how-it-works_3">How It Works</h3>
+<p>When the current zoom level is <strong>greater than or equal</strong> to the <code>hideAtZoom</code> value:
+- All features (points, polygons, lines) are hidden from the map
+- A blue notification message appears: "Features hidden at this zoom level. Zoom out to view."
+- The feature count at the bottom-left <strong>remains visible</strong>, showing the total number of features
+- Clustering (if enabled) remains configured and will work when zooming back out</p>
+<h3 id="configuration-example_1">Configuration Example</h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Map with Zoom Restriction"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myDataSource"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hideAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">59.3293</span><span class="p">,</span><span class="w"> </span><span class="mf">18.0686</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>In this example:
+- Features are visible at zoom levels 0-15
+- Features are hidden at zoom level 16 and above
+- Users can still pan and zoom, but features won't display until they zoom out</p>
+<h3 id="use-cases_2">Use Cases</h3>
+<ol>
+<li><strong>Privacy Protection</strong>: Hide detailed building/parcel data at street level</li>
+<li><strong>Data Sensitivity</strong>: Prevent viewing of sensitive locations at close zoom</li>
+<li><strong>Performance</strong>: Reduce rendering load at extreme zoom levels where features overlap</li>
+<li><strong>Map Clarity</strong>: Prevent visual clutter when zoomed in too far</li>
+</ol>
+<h3 id="combining-with-clustering">Combining with Clustering</h3>
+<p>The <code>hideAtZoom</code> option works seamlessly with clustering:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clustered Map with Zoom Limit"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buildings"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"disableClusteringAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"hideAtZoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Behavior:
+- Zoom 0-13: Features are clustered
+- Zoom 14-15: Clusters disabled, all markers visible
+- Zoom 16+: All features hidden</p>
+<h3 id="visual-feedback">Visual Feedback</h3>
+<p>When features are hidden:
+- A blue information banner appears at the top of the map
+- The banner includes an information icon and clear message
+- The feature count remains visible (e.g., "Showing 1,234 features")
+- The map background and controls remain functional</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="map-feels-slow-with-many-features">Map feels slow with many features?</h3>
+<ul>
+<li>Enable clustering: <code>"enableClustering": true</code></li>
+<li>Consider using time filters to reduce data</li>
+<li>Adjust <code>maxFeatures</code> in your data source configuration</li>
+</ul>
+<h3 id="clusters-not-appearing">Clusters not appearing?</h3>
+<ul>
+<li>Verify <code>"enableClustering": true</code> is set</li>
+<li>Check that you have Point or MultiPoint geometries</li>
+<li>Polygons and lines are never clustered</li>
+</ul>
+<h3 id="feature-selection-not-working">Feature selection not working?</h3>
+<ul>
+<li>Feature selection works with clusters - ensure you've zoomed in enough to see individual markers</li>
+<li>Selected features are highlighted in red on top of clusters</li>
+</ul>
+<h2 id="future-enhancements">Future Enhancements</h2>
+<p>Possible future improvements:
+- Configurable cluster radius
+- Custom cluster icon styling
+- Cluster popup showing aggregate statistics
+- Per-cluster color coding based on attributes</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

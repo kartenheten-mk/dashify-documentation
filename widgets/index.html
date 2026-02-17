@@ -1,0 +1,2281 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kartenheten-mk.github.io/dashify-documentation/widgets/">
+      
+      
+        <link rel="prev" href="../dashboards/">
+      
+      
+        <link rel="next" href="clustering/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Overview - Dashify Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#widgets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Dashify Documentation" class="md-header__button md-logo" aria-label="Dashify Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dashify Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="green" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="green" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kartenheten-mk/dashify-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../configuration/" class="md-tabs__link">
+          
+  
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../dashboards/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dashboards
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Widgets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../datasources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Data Sources
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../filters/" class="md-tabs__link">
+          
+  
+  
+  Filters &amp; Functions
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dashify Documentation" class="md-nav__button md-logo" aria-label="Dashify Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Dashify Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kartenheten-mk/dashify-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/app_customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Widgets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Widgets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-widget-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Widget (map)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-widget-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Widget (table)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counter-widget-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter Widget (counter)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#area-widget-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area Widget (area)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-widget-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length Widget (length)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-widget-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Widget (statistics)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-chart-widget-linechart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line Chart Widget (linechart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#area-chart-widget-areachart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area Chart Widget (areachart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pie-chart-widget-piechart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pie Chart Widget (piechart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population-pyramid-widget-populationpyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Pyramid Widget (populationpyramid)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clustering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clustering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters &amp; Functions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Filters &amp; Functions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Column Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/spatial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spatial Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/atlas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atlas Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widget-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-widget-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map Widget (map)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-widget-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Widget (table)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counter-widget-counter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counter Widget (counter)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#area-widget-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area Widget (area)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#length-widget-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Length Widget (length)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statistics-widget-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statistics Widget (statistics)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-chart-widget-linechart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line Chart Widget (linechart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#area-chart-widget-areachart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Area Chart Widget (areachart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pie-chart-widget-piechart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pie Chart Widget (piechart)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#population-pyramid-widget-populationpyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Pyramid Widget (populationpyramid)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="widgets">Widgets</h1>
+<p>Dashify offers a rich set of widgets to visualize and interact with your data. Each widget is configured within the <code>widgets</code> array of a dashboard.</p>
+<h2 id="overview">Overview</h2>
+<p>Widgets are categorized into:</p>
+<ul>
+<li><strong>Primary Widgets</strong>: <code>map</code> (central view), <code>table</code> (data grid).</li>
+<li><strong>Sidebar Widgets</strong>: <code>counter</code>, <code>area</code>, <code>length</code>, <code>statistics</code>, <code>linechart</code>, <code>areachart</code>, <code>piechart</code>, <code>populationpyramid</code> (displayed in the right sidebar).</li>
+</ul>
+<h2 id="widget-configuration">Widget Configuration</h2>
+<p>Each widget object in the <code>widgets</code> array follows this general structure:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"widget_type"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Widget Title"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datasource_id"</span><span class="p">,</span><span class="w"> </span><span class="c1">// ID matching the dashboard's dataSource</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Widget-specific options</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="map-widget-map">Map Widget (<code>map</code>)</h2>
+<p>Displays GeoJSON features on an interactive Leaflet map. Supports clustering, popups, multiple base layers, and layer switching.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>center</code></td>
+<td style="text-align: left;"><code>[number, number]</code></td>
+<td style="text-align: left;"><code>[62.0, 15.0]</code></td>
+<td style="text-align: left;">Initial map center <code>[lat, lon]</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>zoom</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>5</code></td>
+<td style="text-align: left;">Initial zoom level.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>markerColor</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>#3b82f6</code></td>
+<td style="text-align: left;">Color for point markers (hex code).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mapSource</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Key of the base map source defined in <code>mapSources</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>layers</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional layer override for WMS sources.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>additionalLayers</code></td>
+<td style="text-align: left;"><code>(string \| object)[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Extra layers appended to the map source defaults (drawn on top).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showLayerControl</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Enable the layer switcher control.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showColorPicker</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Enable the color picker control.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>queryable</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Enable click interactions (popups + selection).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>enableClustering</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Enable clustering for point features.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clusterAllGeometries</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Cluster all geometry types (including polygons) using centroids.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>clusterRadius</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>50</code></td>
+<td style="text-align: left;">Max cluster radius in pixels.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>disableClusteringAtZoom</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Zoom level to disable clustering and show individual markers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>spiderfyOnMaxZoom</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">When clicking a cluster at max zoom, spiderfy markers instead of zooming.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showCoverageOnHover</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Show the bounds of a cluster on hover.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>zoomToBoundsOnClick</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Zoom to bounds of cluster when clicked.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>animate</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Enable/disable cluster animations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>chunkedLoading</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Load markers in chunks for better performance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>removeOutsideVisibleBounds</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Remove markers outside viewport for better performance.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showSingleFeatures</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Show individual markers when not clustered. Set to <code>false</code> for density-only views.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>hideAtZoom</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Hide all features when zoomed in beyond this level.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main Map"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-data"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">59.3293</span><span class="p">,</span><span class="w"> </span><span class="mf">18.0686</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"enableClustering"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"clusterAllGeometries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"markerColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#e74c3c"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"mapSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"osm"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"showLayerControl"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="table-widget-table">Table Widget (<code>table</code>)</h2>
+<p>Displays a sortable, paginated table of feature properties. Supports column filtering and searching.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>columns</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">All</td>
+<td style="text-align: left;">List of property keys to display as columns.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>sortable</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Enable column sorting.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pageSize</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>50</code></td>
+<td style="text-align: left;">Number of rows per page.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"table"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature List"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-data"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"columns"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w"> </span><span class="s2">"category"</span><span class="p">,</span><span class="w"> </span><span class="s2">"date_created"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="counter-widget-counter">Counter Widget (<code>counter</code>)</h2>
+<p>Displays a simple count of features, optionally filtered or unique.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Subtitle/label below the count.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>icon</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional emoji or icon class.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uniqueBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Property key to count unique values (deduplication).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"counter"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Projects"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-data"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active Projects"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"🏗️"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"uniqueBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project_id"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="area-widget-area">Area Widget (<code>area</code>)</h2>
+<p>Calculates the total area of polygon features.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Label for the area value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unit</code></td>
+<td style="text-align: left;"><code>'ha' \| 'km²' \| 'm²'</code></td>
+<td style="text-align: left;"><code>'ha'</code></td>
+<td style="text-align: left;">Unit of measurement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precision</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>2</code></td>
+<td style="text-align: left;">Number of decimal places.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"area"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Land Area"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-data"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ha"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hectares"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="length-widget-length">Length Widget (<code>length</code>)</h2>
+<p>Calculates the total length of line features.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Label for the length value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unit</code></td>
+<td style="text-align: left;"><code>'m' \| 'km' \| 'mil'</code></td>
+<td style="text-align: left;"><code>'km'</code></td>
+<td style="text-align: left;">Unit of measurement.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precision</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>2</code></td>
+<td style="text-align: left;">Number of decimal places.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Attribute to group the length by.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterValues</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Only include these specific <code>groupBy</code> values.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"length"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Road Network"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roads"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"km"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"groupBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"road_type"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="statistics-widget-statistics">Statistics Widget (<code>statistics</code>)</h2>
+<p>Displays multiple calculated statistics (sum or count) based on feature attributes.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>statistics</code></td>
+<td style="text-align: left;"><code>StatisticsItem[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Array of statistics to calculate.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional attribute to group/pivot by.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupByDate</code></td>
+<td style="text-align: left;"><code>DateGroupingConfig</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional date grouping configuration.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterValues</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: only include these groupBy values.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uniqueBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: deduplicate features by this attribute before calculating statistics.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>StatisticsItem Structure</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Unique ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Display label.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>attribute</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Feature property to operate on (<code>*</code> for all).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operation</code></td>
+<td style="text-align: left;"><code>'sum' \| 'count'</code></td>
+<td style="text-align: left;">Aggregation method.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unit</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">Suffix for the value (e.g., "pcs").</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precision</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Number of decimal places.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DateGroupingConfig Structure</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dateField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">The date field to use for grouping.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>intervalDays</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Number of days per interval.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maxIntervals</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Optional: Maximum number of intervals to show.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"statistics"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project Stats"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"projects"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"groupByDate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"dateField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created_at"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"intervalDays"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"maxIntervals"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"statistics"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"total_cost"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Cost"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"attribute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"budget"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sum"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEK"</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="line-chart-widget-linechart">Line Chart Widget (<code>linechart</code>)</h2>
+<p>Visualizes data trends over time.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dateField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">The timestamp field to use for the X-axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>valueField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional field to sum (defaults to count).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operation</code></td>
+<td style="text-align: left;"><code>'count' \| 'sum' \| 'mean' \| 'median' \| 'max' \| 'min'</code></td>
+<td style="text-align: left;"><code>'count'</code></td>
+<td style="text-align: left;">Aggregation method.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>defaultGranularity</code></td>
+<td style="text-align: left;"><code>'day' \| 'week' \| 'month' \| 'year'</code></td>
+<td style="text-align: left;"><code>'week'</code></td>
+<td style="text-align: left;">Default time interval.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional attribute to create multiple lines.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Y-axis label.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lineColor</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>'#3b82f6'</code></td>
+<td style="text-align: left;">Line color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showDots</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Show data points.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>compact</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Compact mode for sidebar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uniqueBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: deduplicate features by this attribute.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupColors</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: custom color palette for groups.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: attribute field to filter on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterValues</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: only include features where <code>filterField</code> matches one of these values.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>yAxisAutoScale</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Optional: auto-scale Y-axis to data range.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linechart"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications per Month"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"applications"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"dateField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submission_date"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"defaultGranularity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"groupBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"groupColors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"#3b82f6"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#ef4444"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#10b981"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="area-chart-widget-areachart">Area Chart Widget (<code>areachart</code>)</h2>
+<p>Visualizes data trends over time as filled areas. Supports stacking for grouped data and configurable curve interpolation. Inherits all options from <code>linechart</code>.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>dateField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">The timestamp field to use for the X-axis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>valueField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional field to aggregate (defaults to count).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operation</code></td>
+<td style="text-align: left;"><code>'count' \| 'sum' \| 'mean' \| 'median' \| 'max' \| 'min'</code></td>
+<td style="text-align: left;"><code>'count'</code></td>
+<td style="text-align: left;">Aggregation method.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>defaultGranularity</code></td>
+<td style="text-align: left;"><code>'day' \| 'week' \| 'month' \| 'year'</code></td>
+<td style="text-align: left;"><code>'week'</code></td>
+<td style="text-align: left;">Default time interval.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional attribute to create multiple areas.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>stacked</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Stack areas on top of each other (requires <code>groupBy</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>curveType</code></td>
+<td style="text-align: left;"><code>'monotone' \| 'linear' \| 'step' \| 'stepBefore' \| 'stepAfter' \| 'natural'</code></td>
+<td style="text-align: left;"><code>'monotone'</code></td>
+<td style="text-align: left;">Interpolation curve type. Use <code>linear</code> for straight lines between points.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>label</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>'Antal'</code></td>
+<td style="text-align: left;">Y-axis label.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>lineColor</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>'#3b82f6'</code></td>
+<td style="text-align: left;">Area stroke/fill color (single area mode).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showDots</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Show data points.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>compact</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Compact mode for sidebar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uniqueBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: deduplicate features by this attribute.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>groupColors</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: custom color palette for groups.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: attribute field to filter on.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterValues</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: only include features where <code>filterField</code> matches one of these values.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>yAxisAutoScale</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Auto-scale Y-axis to data range instead of starting from 0.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example (Basic)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"areachart"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Registrations Over Time"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"registrations"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"dateField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"created_date"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"defaultGranularity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"month"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"lineColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#8b5cf6"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"curveType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linear"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Example (Stacked by Group)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"areachart"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Applications by Municipality"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"applications"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"dateField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submission_date"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"groupBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"municipality"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stacked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"curveType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linear"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"defaultGranularity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"week"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"groupColors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"#4ade80"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#60a5fa"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#f472b6"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="pie-chart-widget-piechart">Pie Chart Widget (<code>piechart</code>)</h2>
+<p>Displays distribution of data based on a grouping attribute.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>groupBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Attribute to group by (creates segments).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>operation</code></td>
+<td style="text-align: left;"><code>'count' \| 'sum' \| 'length' \| 'area'</code></td>
+<td style="text-align: left;"><code>'count'</code></td>
+<td style="text-align: left;">Aggregation method.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>valueField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Field to sum (if operation is <code>sum</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unit</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: unit for length/area.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>precision</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: decimal places for length/area.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>colors</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: custom color palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showLabels</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Show percentage labels on segments.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>compact</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>false</code></td>
+<td style="text-align: left;">Compact mode for sidebar.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uniqueBy</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: deduplicate features by this attribute.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>filterValues</code></td>
+<td style="text-align: left;"><code>string[]</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Optional: only include these groupBy values.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>innerRadius</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;">Percentage (0-100) for donut style.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showLegend</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Whether to show the legend.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"piechart"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Status Distribution"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tasks"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"groupBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"status"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"innerRadius"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"colors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"#3b82f6"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#ef4444"</span><span class="p">,</span><span class="w"> </span><span class="s2">"#10b981"</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h2 id="population-pyramid-widget-populationpyramid">Population Pyramid Widget (<code>populationpyramid</code>)</h2>
+<p>Specialized chart for displaying age and gender distribution.</p>
+<p><strong>Options (<code>options</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>genderField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Field containing gender data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ageField</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Field containing age data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maleValue</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"M"</code></td>
+<td style="text-align: left;">Value representing male in <code>genderField</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>femaleValue</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"K"</code></td>
+<td style="text-align: left;">Value representing female in <code>genderField</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maleLabel</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"Män"</code></td>
+<td style="text-align: left;">Display label for males.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>femaleLabel</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"Kvinnor"</code></td>
+<td style="text-align: left;">Display label for females.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ageInterval</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>5</code></td>
+<td style="text-align: left;">Size of age buckets.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maxAge</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>100</code></td>
+<td style="text-align: left;">Max age before "X+" group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>maleColor</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"#3b82f6"</code></td>
+<td style="text-align: left;">Color for male bars.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>femaleColor</code></td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>"#ec4899"</code></td>
+<td style="text-align: left;">Color for female bars.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>showPercentage</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;"><code>true</code></td>
+<td style="text-align: left;">Show percentage alongside counts.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>domainPadding</code></td>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;"><code>0.1</code></td>
+<td style="text-align: left;">Buffer percentage for chart edges.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>xAxisFormat</code></td>
+<td style="text-align: left;"><code>'count' \| 'percent'</code></td>
+<td style="text-align: left;"><code>'count'</code></td>
+<td style="text-align: left;">X-axis format.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>compact</code></td>
+<td style="text-align: left;"><code>boolean</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Compact mode for sidebar.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"populationpyramid"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demographics"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"dataSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"population"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"genderField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KON"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ageField"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALDER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"maleValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"femaleValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"maxAge"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"xAxisFormat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
